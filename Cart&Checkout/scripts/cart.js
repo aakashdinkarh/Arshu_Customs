@@ -44,12 +44,12 @@ function addItem(dum) {
   let totalCost = Number(dum.cost) * dum.quantity;
   new_item.outerHTML = `<div class="item" >
   <div class="imageIcon">
-    <img src="https://d1wnwqwep8qkqc.cloudfront.net/uploads/stage/stage_image/64229/optimized_large_thumb_33686a.jpg" alt="">
+    <img src="${dum.img}" alt="">
   </div>
-  <p class="name">${dum.name}</p>
-  <p>Cost: $<span class="cost">${dum.cost}</span></p>
-  <p>Size: <span class="size">${dum.size}</span><br>
-<span>Quantity: &nbsp;&nbsp;&nbsp;<input style="width:60px" type="number" id="quantity" value="${dum.quantity}"></span></p>
+  <p class="name bold">${dum.name}</p>
+  <p><b>Cost:</b> Rs <span class="cost">${dum.cost}</span></p>
+  <p><b>Size:</b> <span class="size">${dum.size}</span><br>
+<span><b>Quantity:</b> &nbsp;&nbsp;&nbsp;<input style="width:60px" type="number" id="quantity" value="${dum.quantity}"></span></p>
 <button class="breadcrumb remBtn">Remove</button>
 </div>`;
 }
@@ -87,7 +87,6 @@ function emptyCheck() {
 
 //update cart items quantity on input change
 function updateQuantity() {
-  console.log('called')
   let prod = this.closest(".item");
 
   let z = JSON.parse(localStorage.getItem("CartItem"));

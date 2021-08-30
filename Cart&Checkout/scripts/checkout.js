@@ -3,7 +3,7 @@ function checkoutList(name, cost, quantity){
   let total = cost*quantity;
   let div = document.createElement('div');
   prodList.append(div);
-  div.outerHTML = `<p> <span class="prodName">${name}</span> <span class="price">$${total}</span> </p>`
+  div.outerHTML = `<p> <span class="prodName">${name}</span> <span class="price">Rs ${total}</span> </p>`
 }
 
 let z = JSON.parse(localStorage.getItem("CartItem"));
@@ -16,4 +16,4 @@ for( let k = 0; k < z.length; k++) {
   )
   total = total + z[k].cost*z[k].quantity;
 }
-document.querySelector('.price.bold').innerHTML = `$${total}`;
+document.querySelector('.price.bold').innerHTML = `Rs ${total}`;
